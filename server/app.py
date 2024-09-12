@@ -7,6 +7,7 @@ import os
 from models import db, Player, Location, Event
 from config import Config
 import random
+import json
 
 def create_app(config_class=Config):
     # Load environment variables from .env file
@@ -103,6 +104,34 @@ def create_app(config_class=Config):
                 'description': event.description
             })
         return jsonify({}), 404
+    
+    @app.route('/storylines', methods=['GET'])
+    def get_storylines():
+        try:
+            # Load storylines from the JSON file
+            with open('data/storylines.json') as f:
+                storylines = json.load(f)
+            return jsonify(storylines)
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
+
+    @app.route('/storylines/<character>', methods=['GET'])
+    def get_storyline_by_character(character):
+        try:
+            # Load storylines from the JSON file
+            with open('data/storylines.json') as f:
+                storylines = json.load(f)
+            
+            # Handle URL encoding for spaces
+            character_name = character.replace("%20", " ")
+            
+            # Check if the character's storyline exists
+            if character_name in storylines:
+                return jsonify(storylines[character_name])
+            else:
+                return jsonify({"error": "Storyline not found for character: " + character_name}), 404
+        except Exception as e:
+            return jsonify({"error": str(e)}), 500
 
     return app
 

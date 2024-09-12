@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import StorylineCard from './StorylineCard'; // Import your StorylineCard component
 
 const GameLaunch = () => {
     const location = useLocation();
@@ -10,9 +11,8 @@ const GameLaunch = () => {
     useEffect(() => {
         const fetchRandomLocationAndEvent = async () => {
             try {
-                // Adjust the URLs based on your actual API endpoints
-                const locationResponse = await fetch('http://127.0.0.1:5000/locations/random');
-                const eventResponse = await fetch('http://127.0.0.1:5000/events/random');
+                const locationResponse = await fetch('http://127.0.0.1:5000/random-location');
+                const eventResponse = await fetch('http://127.0.0.1:5000/random-event');
                 const locationData = await locationResponse.json();
                 const eventData = await eventResponse.json();
 
@@ -52,6 +52,12 @@ const GameLaunch = () => {
                     <p><strong>Description:</strong> {randomEvent.description}</p>
                 </div>
             )}
+
+            {/* Add the Storyline trivia section */}
+            <div style={{ marginTop: '2rem' }}>
+                <h2>Storyline Trivia</h2>
+                <StorylineCard character={selectedCharacter.name} /> {/* Pass the selected character's name */}
+            </div>
         </div>
     );
 };
