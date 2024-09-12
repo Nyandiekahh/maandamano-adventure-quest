@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
     const [players, setPlayers] = useState([]);
-    // Removed unused selectedCharacter variable
+    const navigate = useNavigate(); // Hook for programmatic navigation
 
     const handleStartGame = async () => {
         try {
@@ -13,6 +14,11 @@ const HomePage = () => {
         } catch (error) {
             console.error("Error fetching players:", error);
         }
+    };
+
+    const handleCardClick = (player) => {
+        // Navigate to the GameLaunch page and pass selected player data
+        navigate('/game-launch', { state: { selectedCharacter: player } });
     };
 
     return (
@@ -32,7 +38,11 @@ const HomePage = () => {
             {players.length > 0 && (
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1rem', marginTop: '2rem' }}>
                     {players.map(player => (
-                        <div key={player.id} style={cardStyle}>
+                        <div
+                            key={player.id}
+                            style={cardStyle}
+                            onClick={() => handleCardClick(player)} // Add click handler
+                        >
                             <h2 style={{ color: '#f39c12' }}>{player.name}</h2>
                             <p><strong>Strengths:</strong> {player.strengths}</p>
                             <p><strong>Weaknesses:</strong> {player.weaknesses}</p>
@@ -55,7 +65,11 @@ const cardStyle = {
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
     textAlign: 'left',
     transition: 'transform 0.3s ease, box-shadow 0.3s ease',
-    cursor: 'pointer'
+    cursor: 'pointer',
+    ':hover': {
+        transform: 'scale(1.05)',
+        boxShadow: '0 6px 12px rgba(0, 0, 0, 0.3)'
+    }
 };
 
 export default HomePage;
