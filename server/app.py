@@ -4,9 +4,9 @@ from flask_migrate import Migrate
 from flask_restful import Api, Resource
 from dotenv import load_dotenv
 import os
-
 from models import db, Player, Location, Event
 from config import Config
+import random
 
 def create_app(config_class=Config):
     # Load environment variables from .env file
@@ -83,6 +83,27 @@ def create_app(config_class=Config):
     def home():
         return "Welcome to Maandamano Adventure Quest API!"
     
+    @app.route('/random-location')
+    def random_location():
+        locations = Location.query.all()
+        if locations:
+            location = random.choice(locations)
+            return jsonify({
+                'name': location.name,
+                'description': location.description
+            })
+        return jsonify({}), 404
+
+    @app.route('/random-event')
+    def random_event():
+        events = Event.query.all()
+        if events:
+            event = random.choice(events)
+            return jsonify({
+                'description': event.description
+            })
+        return jsonify({}), 404
+
     return app
 
 app = create_app()

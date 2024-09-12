@@ -1,8 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { Switch, Route } from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import WelcomeScreen from './WelcomeScreen';
+import HomePage from './HomePage';
+import GameLaunch from './GameLaunch';
 
-function App() {
-  return <h1>Project Client</h1>;
-}
+const App = () => {
+    // Example player name for demonstration purposes
+    const playerName = "PlayerOne";
+
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<WelcomeScreen />} />
+                <Route path="/homepage" element={<HomePage playerName={playerName} />} />
+                <Route path="/game-launch" element={<GameLaunch />} />
+
+                {/* Add routes for other pages */}
+            </Routes>
+        </Router>
+    );
+};
 
 export default App;
