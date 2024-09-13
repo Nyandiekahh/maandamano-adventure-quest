@@ -10,15 +10,43 @@
       "choices": [
         {
           "id": 1,
-          "text": "Interview protestors to get their side of the story.",
-          "outcome": "You gather firsthand accounts, but risk being targeted by the police.",
-          "mark": 10
+          "text": "Focus on documenting peaceful protests.",
+          "outcome": "Your coverage highlights the peaceful nature of the protests, garnering positive media attention.",
+          "mark": 5,
+          "nextChoices": [
+            {
+              "id": 2,
+              "text": "Continue documenting and interview key leaders.",
+              "outcome": "Interviews with leaders provide deeper insights and help calm tensions.",
+              "mark": 6
+            },
+            {
+              "id": 3,
+              "text": "Share your footage with international news outlets.",
+              "outcome": "International coverage increases global awareness and pressure on authorities.",
+              "mark": 7
+            }
+          ]
         },
         {
-          "id": 2,
-          "text": "Focus on documenting the police's actions.",
-          "outcome": "You capture important footage but might miss critical information from the protestors.",
-          "mark": -5
+          "id": 4,
+          "text": "Highlight instances of police aggression.",
+          "outcome": "Your focus on aggression escalates tensions and puts you in danger.",
+          "mark": -6,
+          "nextChoices": [
+            {
+              "id": 5,
+              "text": "Seek protection from your news organization.",
+              "outcome": "Your organization ensures your safety, but the focus remains on the conflict.",
+              "mark": -4
+            },
+            {
+              "id": 6,
+              "text": "Attempt to mediate between police and protestors.",
+              "outcome": "Your attempt at mediation is risky but shows a willingness to bridge gaps.",
+              "mark": 2
+            }
+          ]
         }
       ]
     },
@@ -32,15 +60,43 @@
       "choices": [
         {
           "id": 1,
-          "text": "Try to negotiate with the protestors to de-escalate the situation.",
-          "outcome": "The protestors listen to you, but your inexperience shows, and things could still spiral out of control.",
-          "mark": 5
+          "text": "Implement crowd control measures calmly.",
+          "outcome": "Your calm approach helps manage the crowd effectively and reduces immediate violence.",
+          "mark": 4,
+          "nextChoices": [
+            {
+              "id": 2,
+              "text": "Communicate with protest leaders to defuse tensions.",
+              "outcome": "Dialogue with leaders helps ease the situation and gain trust.",
+              "mark": 5
+            },
+            {
+              "id": 3,
+              "text": "Use non-lethal methods to disperse the crowd.",
+              "outcome": "Non-lethal methods are effective, and you are praised for restraint.",
+              "mark": 6
+            }
+          ]
         },
         {
-          "id": 2,
-          "text": "Use tear gas to disperse the crowd.",
-          "outcome": "The crowd scatters, but the use of force could escalate tensions.",
-          "mark": -10
+          "id": 4,
+          "text": "Deploy tear gas to disperse the crowd.",
+          "outcome": "Tear gas disperses the crowd but escalates the conflict and draws criticism.",
+          "mark": -7,
+          "nextChoices": [
+            {
+              "id": 5,
+              "text": "Retreat and reassess the situation.",
+              "outcome": "Retreat allows you to regroup, but the damage to relations is done.",
+              "mark": -5
+            },
+            {
+              "id": 6,
+              "text": "Continue with more aggressive measures.",
+              "outcome": "Aggressive measures increase tension and lead to further violence.",
+              "mark": -10
+            }
+          ]
         }
       ]
     },
@@ -54,59 +110,143 @@
       "choices": [
         {
           "id": 1,
-          "text": "Order your unit to form a defensive line.",
-          "outcome": "The crowd backs off slightly, but the protestors are still agitated.",
-          "mark": 7
+          "text": "Use your experience to coordinate with other officers.",
+          "outcome": "Effective coordination helps manage the crowd and minimizes conflicts.",
+          "mark": 5,
+          "nextChoices": [
+            {
+              "id": 2,
+              "text": "Engage with community leaders to mediate.",
+              "outcome": "Engagement with leaders fosters understanding and reduces tension.",
+              "mark": 6
+            },
+            {
+              "id": 3,
+              "text": "Maintain a defensive stance and control the area.",
+              "outcome": "Defensive tactics prevent escalation but may seem overly aggressive.",
+              "mark": 4
+            }
+          ]
         },
         {
-          "id": 2,
-          "text": "Attempt to arrest the protest leaders.",
-          "outcome": "You remove key agitators, but this could spark anger among the remaining protestors.",
-          "mark": -8
+          "id": 4,
+          "text": "Implement more forceful crowd control measures.",
+          "outcome": "Forceful measures lead to increased violence and damage to public relations.",
+          "mark": -8,
+          "nextChoices": [
+            {
+              "id": 5,
+              "text": "Request reinforcements to handle the situation.",
+              "outcome": "Reinforcements help, but the situation remains volatile.",
+              "mark": -4
+            },
+            {
+              "id": 6,
+              "text": "Attempt to negotiate a truce with protest leaders.",
+              "outcome": "Negotiations lead to a temporary de-escalation, though tensions persist.",
+              "mark": 3
+            }
+          ]
         }
       ]
     },
     {
       "name": "Protestor",
-      "introduction": "You are part of a group protesting for change, determined to make your voice heard.",
-      "currentSituation": "The police are forming up, and tensions are at a breaking point.",
-      "strengths": "Passion, strong beliefs",
-      "weaknesses": "Limited protection, vulnerability to law enforcement",
-      "equipment": "Placards, banners",
+      "introduction": "You are a protestor fighting for change. The situation is volatile, but you remain committed to your cause.",
+      "currentSituation": "Tensions between protestors and the police are growing, and the crowd is getting more agitated.",
+      "strengths": "Passion, strength in numbers",
+      "weaknesses": "Vulnerable to law enforcement, disorganized",
+      "equipment": "Banner, loudspeaker",
       "choices": [
         {
           "id": 1,
-          "text": "Lead a chant to keep the protestors united and peaceful.",
-          "outcome": "The crowd follows your lead, but the police are getting restless.",
-          "mark": 6
+          "text": "Lead the crowd in chanting slogans peacefully.",
+          "outcome": "Your peaceful approach calms some of the protestors, and the atmosphere de-escalates.",
+          "mark": 4,
+          "nextChoices": [
+            {
+              "id": 2,
+              "text": "Continue to organize peaceful marches.",
+              "outcome": "The march goes smoothly, and the media covers it positively.",
+              "mark": 5
+            },
+            {
+              "id": 3,
+              "text": "Approach police to engage in dialogue.",
+              "outcome": "Your attempt at dialogue is well-received, and tensions decrease.",
+              "mark": 6
+            }
+          ]
         },
         {
-          "id": 2,
-          "text": "Encourage protestors to confront the police peacefully.",
-          "outcome": "Tensions rise as protestors approach the police lines, risking escalation.",
-          "mark": -7
+          "id": 4,
+          "text": "Encourage the protestors to push forward towards the police line.",
+          "outcome": "The crowd becomes more aggressive, and clashes with the police become imminent.",
+          "mark": -7,
+          "nextChoices": [
+            {
+              "id": 5,
+              "text": "Take the lead and confront the police directly.",
+              "outcome": "You confront the police, but the situation escalates into violence.",
+              "mark": -10
+            },
+            {
+              "id": 6,
+              "text": "Step back and rethink your approach.",
+              "outcome": "You step back, allowing tensions to cool slightly.",
+              "mark": 3
+            }
+          ]
         }
       ]
     },
     {
       "name": "Politician",
-      "introduction": "As a politician, you must balance the demands of the protestors with the need to maintain order.",
-      "currentSituation": "You’ve arrived at the protest site, and both sides are looking to you for guidance.",
-      "strengths": "Influence, negotiation skills",
-      "weaknesses": "Public scrutiny, divided loyalties",
-      "equipment": "Speeches, bodyguards",
+      "introduction": "As a politician, you must navigate the delicate balance between appeasing protestors and maintaining control.",
+      "currentSituation": "Public unrest is growing, and your decisions will affect your political career and the nation.",
+      "strengths": "Influence, resources",
+      "weaknesses": "Public scrutiny, competing interests",
+      "equipment": "Public office, media contacts",
       "choices": [
         {
           "id": 1,
-          "text": "Address the crowd to try and calm the situation.",
-          "outcome": "Your speech resonates with some, but others remain unsatisfied.",
-          "mark": 8
+          "text": "Issue a public statement calling for calm.",
+          "outcome": "The statement reaches the media, and some protestors begin to calm down.",
+          "mark": 5,
+          "nextChoices": [
+            {
+              "id": 2,
+              "text": "Meet with protest leaders for dialogue.",
+              "outcome": "The meeting is productive, and a path toward resolution begins to form.",
+              "mark": 6
+            },
+            {
+              "id": 3,
+              "text": "Increase law enforcement presence to maintain order.",
+              "outcome": "While order is maintained, public backlash increases against you.",
+              "mark": -4
+            }
+          ]
         },
         {
-          "id": 2,
-          "text": "Privately meet with the protest leaders to discuss their demands.",
-          "outcome": "You gain valuable insight but risk appearing indecisive to the public.",
-          "mark": -6
+          "id": 4,
+          "text": "Support stronger measures to suppress the protest.",
+          "outcome": "Your support for suppression escalates tensions, and your popularity takes a hit.",
+          "mark": -8,
+          "nextChoices": [
+            {
+              "id": 5,
+              "text": "Defend your actions in a press conference.",
+              "outcome": "Your press conference manages to regain some public trust, but tensions remain high.",
+              "mark": 3
+            },
+            {
+              "id": 6,
+              "text": "Reach out to opposition leaders for a compromise.",
+              "outcome": "The compromise helps ease the tensions and paints you as a peacemaker.",
+              "mark": 7
+            }
+          ]
         }
       ]
     }

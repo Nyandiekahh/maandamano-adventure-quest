@@ -68,6 +68,12 @@ p {
     padding: 1rem;
     width: 100%;
     max-width: 500px;
+    opacity: 1;
+    transition: opacity 0.5s ease-out;
+}
+
+.choice-card.fade-out {
+    opacity: 0;
 }
 
 .choice-button {

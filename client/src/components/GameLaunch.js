@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-// import StorylineCard from './StorylineCard'; // Import your StorylineCard component
+import { useLocation, useNavigate } from 'react-router-dom';
 import './GameLaunch.css'; // Import the CSS file
 
 const GameLaunch = () => {
     const location = useLocation();
-    const { selectedCharacter } = location.state || {}; // Ensure the correct key is used
+    const navigate = useNavigate(); // For navigation to Game Over page
+    const { selectedCharacter } = location.state || {};
     const [randomLocation, setRandomLocation] = useState(null);
     const [randomEvent, setRandomEvent] = useState(null);
     const [storyline, setStoryline] = useState(null);
     const [currentChoices, setCurrentChoices] = useState([]);
-    const [score, setScore] = useState(0); // Add state for the score
+    const [score, setScore] = useState(0);
+    const [situationText, setSituationText] = useState("");
 
     useEffect(() => {
         const fetchRandomLocationAndEvent = async () => {
@@ -34,6 +35,7 @@ const GameLaunch = () => {
                     const data = await response.json();
                     setStoryline(data);
                     setCurrentChoices(data.choices || []);
+                    setSituationText(data.currentSituation || "");
                 } catch (error) {
                     console.error('Error fetching storyline:', error);
                 }
@@ -44,10 +46,33 @@ const GameLaunch = () => {
         fetchStoryline();
     }, [selectedCharacter]);
 
-    const handleChoiceSelect = (mark) => {
-        console.log('Selected choice mark:', mark);
+    const handleChoiceSelect = (choice) => {
         // Update the score based on the choice mark
-        setScore(prevScore => prevScore + mark);
+        const newScore = score + choice.mark;
+        setScore(newScore);
+
+        // Check if the score has gone below 0
+        if (newScore < 0) {
+            navigate('/game-over'); // Navigate to the Game Over page if score is negative
+            return; // Stop further execution
+        }
+
+        // Update the situation text based on the selected choice
+        setSituationText(choice.outcome || "");
+
+        // Transition animation
+        const choiceElements = document.querySelectorAll('.choice-card');
+        choiceElements.forEach(el => el.classList.add('fade-out'));
+
+        // Wait for animation to finish before updating choices
+        setTimeout(() => {
+            // Fetch next choices
+            if (choice.nextChoices) {
+                setCurrentChoices(choice.nextChoices);
+            } else {
+                setCurrentChoices([]); // Clear choices if there are no more options
+            }
+        }, 500); // Match this timing with your CSS transition duration
     };
 
     if (!selectedCharacter) {
@@ -89,11 +114,11 @@ const GameLaunch = () => {
                 {storyline && (
                     <div>
                         <h2>Storyline Trivia</h2>
-                        <p>{storyline.currentSituation}</p>
+                        <p>{situationText}</p>
                         <div className="choices-container">
                             {currentChoices.map((choice) => (
-                                <div key={choice.id} className="choice-card">
-                                    <button className="choice-button" onClick={() => handleChoiceSelect(choice.mark)}>
+                                <div key={choice.id} className={`choice-card ${currentChoices.length === 0 ? 'fade-out' : ''}`}>
+                                    <button className="choice-button" onClick={() => handleChoiceSelect(choice)}>
                                         {choice.text}
                                     </button>
                                 </div>
