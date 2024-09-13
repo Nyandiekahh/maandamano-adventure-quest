@@ -1,0 +1,21 @@
+/* src/components/ScoreBoard.css */
+.score-board {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.score-board h2 {
+    font-size: 1.8rem;
+    color: #ecf0f1; /* Light color for section titles */
+    margin-bottom: 1rem;
+}
+
+.score {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #e74c3c; /* Eye-catching color for the score */
+    border: 2px solid #e74c3c;
+    border-radius: 10px;
+    padding: 1rem;
+    display: inline-block;
+}

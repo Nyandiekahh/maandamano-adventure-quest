@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const StorylineCard = ({ character }) => {
+const StorylineCard = ({ character, onChoice }) => {
     const [storyline, setStoryline] = useState(null);
 
     useEffect(() => {
@@ -20,10 +20,9 @@ const StorylineCard = ({ character }) => {
         fetchStoryline();
     }, [character]);
 
-    const handleChoice = (choiceKey) => {
-        // Implement the logic to handle the player's choice
-        console.log("Choice selected:", choiceKey);
-        // For now, just log the choice
+    const handleChoice = (choice) => {
+        // Pass the choice mark to the parent component
+        onChoice(choice.mark);
     };
 
     if (!storyline) {
@@ -39,10 +38,10 @@ const StorylineCard = ({ character }) => {
                     {conflict.choices && Object.entries(conflict.choices).map(([choiceKey, choice]) => (
                         <button
                             key={choiceKey}
-                            onClick={() => handleChoice(choiceKey)}
+                            onClick={() => handleChoice(choice)}
                             style={{ margin: '0.5rem', padding: '1rem', backgroundColor: '#f39c12', border: 'none', color: '#fff', borderRadius: '8px', cursor: 'pointer' }}
                         >
-                            {choice.outcome}
+                            {choice.text}
                         </button>
                     ))}
                 </div>

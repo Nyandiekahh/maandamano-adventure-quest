@@ -121,15 +121,18 @@ def create_app(config_class=Config):
             # Load storylines from the JSON file
             with open('data/storylines.json') as f:
                 storylines = json.load(f)
-            
+
             # Handle URL encoding for spaces
             character_name = character.replace("%20", " ")
-            
-            # Check if the character's storyline exists
-            if character_name in storylines:
-                return jsonify(storylines[character_name])
-            else:
-                return jsonify({"error": "Storyline not found for character: " + character_name}), 404
+
+            # Search for the character in the 'characters' array
+            for char in storylines['characters']:
+                if char['name'].lower() == character_name.lower():  # Case-insensitive comparison
+                    return jsonify(char)
+
+            # If the character is not found
+            return jsonify({"error": f"Storyline not found for character: {character_name}"}), 404
+
         except Exception as e:
             return jsonify({"error": str(e)}), 500
 

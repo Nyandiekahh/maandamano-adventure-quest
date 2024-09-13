@@ -1,422 +1,114 @@
 {
-  "Media": {
-    "introduction": "As a prominent media figure, you are at the forefront of shaping public opinion and reporting on critical events. Your role involves not only covering the protests but also influencing public perception through your reporting. Balancing accuracy with the pressures of media influence is crucial to your success.",
-    "conflict": {
-      "1": {
-        "text": "Your coverage of the protests has faced accusations of bias from various sides. How do you handle this? Do you: 1) Conduct an internal review to ensure balanced reporting, which might improve credibility but could lead to internal conflicts, 2) Publish a series of rebuttals defending your coverage, potentially enhancing transparency but risking further polarization, 3) Shift focus to other stories to avoid controversy, which might reduce immediate pressure but could be seen as avoiding accountability?",
-        "choices": {
-          "1": {
-            "outcome": "Conducting an internal review helps ensure balanced reporting and improves credibility. However, this approach may lead to internal conflicts and require significant resources to address all concerns.",
-            "next": "conflict2"
-          },
-          "2": {
-            "outcome": "Publishing rebuttals defends your coverage and enhances transparency, but this approach might exacerbate polarization and draw more criticism from opposing sides.",
-            "next": "conflict3"
-          },
-          "3": {
-            "outcome": "Shifting focus to other stories avoids immediate controversy but may be perceived as avoiding accountability. This approach could lead to a temporary reduction in pressure but might not resolve underlying issues.",
-            "next": "conflict4"
-          }
+  "characters": [
+    {
+      "name": "Media",
+      "introduction": "As a media person, your role is to capture the truth amidst the chaos of the protest.",
+      "currentSituation": "The protest is escalating, and there are conflicting reports about the police's actions.",
+      "strengths": "Access to information, neutral perspective",
+      "weaknesses": "Limited authority, can be targeted",
+      "equipment": "Camera, microphone",
+      "choices": [
+        {
+          "id": 1,
+          "text": "Interview protestors to get their side of the story.",
+          "outcome": "You gather firsthand accounts, but risk being targeted by the police.",
+          "mark": 10
+        },
+        {
+          "id": 2,
+          "text": "Focus on documenting the police's actions.",
+          "outcome": "You capture important footage but might miss critical information from the protestors.",
+          "mark": -5
         }
-      },
-      "2": {
-        "text": "You face pressure to sensationalize your reporting to attract more viewers. How do you respond? Do you: 1) Maintain your commitment to objective reporting, risking lower viewership but preserving journalistic integrity, 2) Incorporate more sensational elements to boost ratings, which could increase viewership but potentially harm your reputation, 3) Balance sensationalism with factual reporting, aiming to attract viewers while retaining credibility, but this approach might lead to mixed reactions?",
-        "choices": {
-          "1": {
-            "outcome": "Maintaining objective reporting preserves journalistic integrity but may result in lower viewership. This approach ensures accuracy but might impact your station's ratings.",
-            "next": "resolution1"
-          },
-          "2": {
-            "outcome": "Incorporating sensational elements boosts ratings but can harm your reputation. This approach may attract more viewers but risks credibility and long-term trust.",
-            "next": "resolution2"
-          },
-          "3": {
-            "outcome": "Balancing sensationalism with factual reporting aims to attract viewers while retaining credibility. This approach might lead to mixed reactions from the audience and critics.",
-            "next": "resolution3"
-          }
-        }
-      },
-      "3": {
-        "text": "A key source provides information that could significantly impact the protests. How do you handle this? Do you: 1) Verify the information thoroughly before publishing, ensuring accuracy but delaying the story, 2) Publish the information immediately to maximize impact, risking potential inaccuracies and credibility issues, 3) Discuss the information with your editorial team to determine the best course of action, which might involve compromise but ensures a more balanced approach?",
-        "choices": {
-          "1": {
-            "outcome": "Verifying the information ensures accuracy and maintains credibility, though it may delay the story. This approach safeguards against misinformation but might miss immediate impact.",
-            "next": "resolution4"
-          },
-          "2": {
-            "outcome": "Publishing the information immediately maximizes impact but risks inaccuracies and credibility issues. This approach can quickly influence public perception but might lead to long-term challenges.",
-            "next": "resolution5"
-          },
-          "3": {
-            "outcome": "Discussing the information with your editorial team leads to a balanced approach, involving compromise. This strategy ensures more thorough vetting but may delay publication.",
-            "next": "resolution6"
-          }
-        }
-      },
-      "4": {
-        "text": "Your team is divided on the direction of your coverage. How do you address this? Do you: 1) Facilitate team discussions to reach a consensus, which may take time but promotes unity, 2) Implement top-down decisions to streamline coverage, potentially causing discontent but ensuring a clear direction, 3) Allow individual reporters to pursue different angles, which might lead to diverse coverage but could lack coherence?",
-        "choices": {
-          "1": {
-            "outcome": "Facilitating team discussions promotes unity and consensus but may take additional time. This approach ensures that all voices are heard but might slow down decision-making.",
-            "next": "resolution7"
-          },
-          "2": {
-            "outcome": "Implementing top-down decisions streamlines coverage but may cause discontent among team members. This approach ensures a clear direction but might affect team morale.",
-            "next": "resolution8"
-          },
-          "3": {
-            "outcome": "Allowing individual reporters to pursue different angles leads to diverse coverage but might lack coherence. This approach fosters creativity but can result in a fragmented narrative.",
-            "next": "resolution9"
-          }
-        }
-      }
+      ]
     },
-    "resolution": {
-      "resolution1": "Conducting an internal review improves credibility and balanced reporting but may cause internal conflicts and require significant resources. This approach supports long-term trust but needs careful management.",
-      "resolution2": "Publishing rebuttals enhances transparency but risks further polarization. This approach demonstrates accountability but might escalate tensions with opposing sides.",
-      "resolution3": "Shifting focus to other stories avoids immediate controversy but may be seen as avoiding accountability. This approach reduces pressure temporarily but may not resolve deeper issues.",
-      "resolution4": "Verifying information thoroughly ensures accuracy and maintains credibility but might delay the story. This approach is crucial for responsible journalism but may miss immediate impact.",
-      "resolution5": "Publishing immediately maximizes impact but risks inaccuracies and credibility issues. This approach can quickly influence public perception but may lead to long-term challenges.",
-      "resolution6": "Discussing information with your editorial team leads to a balanced approach but may delay publication. This strategy ensures thorough vetting but might affect timeliness.",
-      "resolution7": "Facilitating team discussions promotes unity but takes additional time. This approach ensures inclusivity but might slow down decision-making processes.",
-      "resolution8": "Implementing top-down decisions streamlines coverage but may cause team discontent. This approach provides clear direction but can affect morale and creativity.",
-      "resolution9": "Allowing individual reporters to pursue different angles leads to diverse coverage but may lack coherence. This approach fosters creativity but can result in a fragmented narrative."
-    }
-  },
-  "Rookie Officer": {
-    "introduction": "As a rookie police officer, you are new to the force and facing the challenges of maintaining order during the protests. Balancing your duties while navigating the complexities of law enforcement and public relations is crucial in your role.",
-    "conflict": {
-      "1": {
-        "text": "You encounter aggressive behavior from protestors that escalates tensions. How do you handle this? Do you: 1) Follow standard protocols and use non-lethal measures to de-escalate the situation, which might maintain order but could be perceived as insufficient, 2) Use more assertive tactics to control the crowd, which might assert authority but risk further escalation, 3) Withdraw and call for backup, which ensures safety but could be seen as avoiding confrontation?",
-        "choices": {
-          "1": {
-            "outcome": "Following standard protocols and using non-lethal measures maintains order and ensures safety. However, this approach might be perceived as insufficient by higher authorities or escalate tensions if not effective.",
-            "next": "conflict2"
-          },
-          "2": {
-            "outcome": "Using assertive tactics to control the crowd demonstrates authority but risks further escalation. This approach might lead to immediate control but can increase tensions and conflict.",
-            "next": "conflict3"
-          },
-          "3": {
-            "outcome": "Withdrawing and calling for backup ensures safety but might be seen as avoiding confrontation. This approach provides additional support but might be perceived as lacking resolve.",
-            "next": "conflict4"
-          }
+    {
+      "name": "Rookie Officer",
+      "introduction": "You are a new recruit tasked with keeping order during the protest.",
+      "currentSituation": "Tensions are rising, and you must make quick decisions to maintain control.",
+      "strengths": "Enthusiasm, training in crowd control",
+      "weaknesses": "Lack of experience, indecisiveness",
+      "equipment": "Tear gas, baton",
+      "choices": [
+        {
+          "id": 1,
+          "text": "Try to negotiate with the protestors to de-escalate the situation.",
+          "outcome": "The protestors listen to you, but your inexperience shows, and things could still spiral out of control.",
+          "mark": 5
+        },
+        {
+          "id": 2,
+          "text": "Use tear gas to disperse the crowd.",
+          "outcome": "The crowd scatters, but the use of force could escalate tensions.",
+          "mark": -10
         }
-      },
-      "2": {
-        "text": "You receive orders that conflict with your personal judgment about handling the protests. How do you proceed? Do you: 1) Follow the orders as given, adhering to the chain of command, which maintains discipline but might conflict with your personal values, 2) Seek clarification and express concerns to your superiors, potentially leading to adjustments but risking confrontation, 3) Act independently based on your judgment, which could address the situation effectively but might lead to disciplinary actions?",
-        "choices": {
-          "1": {
-            "outcome": "Following orders maintains discipline and adheres to the chain of command but might conflict with personal values. This approach ensures compliance but might affect your personal integrity.",
-            "next": "resolution1"
-          },
-          "2": {
-            "outcome": "Seeking clarification and expressing concerns could lead to adjustments in orders but might risk confrontation with superiors. This approach promotes communication but could impact your standing within the force.",
-            "next": "resolution2"
-          },
-          "3": {
-            "outcome": "Acting independently addresses the situation effectively but might lead to disciplinary actions. This approach demonstrates initiative but could have repercussions on your career.",
-            "next": "resolution3"
-          }
-        }
-      },
-      "3": {
-        "text": "You are tasked with gathering intelligence on protestor activities. How do you approach this? Do you: 1) Conduct thorough investigations using official channels, which ensures accuracy but might be time-consuming, 2) Use more informal methods to gather intelligence quickly, potentially gaining insights faster but risking reliability, 3) Collaborate with other officers to share information and coordinate efforts, which might improve efficiency but requires effective communication?",
-        "choices": {
-          "1": {
-            "outcome": "Conducting thorough investigations using official channels ensures accuracy but can be time-consuming. This approach provides reliable information but might delay responses.",
-            "next": "resolution4"
-          },
-          "2": {
-            "outcome": "Using informal methods for quick intelligence might provide faster insights but risks reliability. This approach speeds up information gathering but might lead to inaccuracies.",
-            "next": "resolution5"
-          },
-          "3": {
-            "outcome": "Collaborating with other officers improves efficiency and information sharing but requires effective communication. This approach enhances coordination but relies on teamwork and clear communication.",
-            "next": "resolution6"
-          }
-        }
-      },
-      "4": {
-        "text": "You witness a fellow officer using excessive force. How do you handle this? Do you: 1) Report the incident through official channels, ensuring accountability but potentially facing backlash from peers, 2) Confront the officer directly, which addresses the issue immediately but could lead to personal conflicts, 3) Ignore the incident to avoid conflict, which might preserve immediate peace but fails to address potential misconduct?",
-        "choices": {
-          "1": {
-            "outcome": "Reporting the incident ensures accountability but might lead to backlash from peers. This approach supports justice but could affect your relationships within the force.",
-            "next": "resolution7"
-          },
-          "2": {
-            "outcome": "Confronting the officer directly addresses the issue immediately but could lead to personal conflicts. This approach demonstrates courage but might result in strained relationships.",
-            "next": "resolution8"
-          },
-          "3": {
-            "outcome": "Ignoring the incident preserves immediate peace but fails to address potential misconduct. This approach avoids conflict but might allow inappropriate behavior to continue.",
-            "next": "resolution9"
-          }
-        }
-      }
+      ]
     },
-    "resolution": {
-      "resolution1": "Following standard protocols maintains order and ensures safety but may be perceived as insufficient. This approach is responsible but might not always be effective in high-tension situations.",
-      "resolution2": "Using assertive tactics asserts authority but risks escalating tensions. This approach can control immediate situations but might lead to long-term complications.",
-      "resolution3": "Withdrawing and calling for backup ensures safety but may be seen as avoiding confrontation. This approach provides additional support but might affect perceptions of resolve.",
-      "resolution4": "Conducting thorough investigations using official channels ensures accurate intelligence but can be time-consuming. This approach supports reliability but might delay critical responses.",
-      "resolution5": "Using informal methods provides quick intelligence but risks reliability. This approach speeds up information gathering but might lead to inaccuracies or incomplete data.",
-      "resolution6": "Collaborating with other officers enhances efficiency and information sharing but requires effective communication. This approach improves coordination but relies on teamwork and clear communication.",
-      "resolution7": "Reporting incidents through official channels ensures accountability but might lead to peer backlash. This approach supports justice but can affect your relationships within the force.",
-      "resolution8": "Confronting the officer directly addresses the issue but might result in personal conflicts. This approach demonstrates courage but can strain relationships with colleagues.",
-      "resolution9": "Ignoring the incident preserves peace but fails to address misconduct. This approach avoids immediate conflict but might allow inappropriate behavior to continue unchecked."
-    }
-  },
-  "Veteran Officer": {
-    "introduction": "As a veteran officer, you bring extensive experience and authority to the force. Your role involves managing and directing operations during the protests while dealing with the complexities of public perception and internal dynamics.",
-    "conflict": {
-      "1": {
-        "text": "You face criticism from the public regarding your approach to handling the protests. How do you address this? Do you: 1) Conduct a public briefing to explain your strategies and decisions, which could improve public understanding but might also draw further criticism, 2) Implement changes based on public feedback, potentially improving relations but risking the perception of inconsistency, 3) Maintain your current approach to avoid appearing reactive, which could solidify authority but might lead to continued dissatisfaction?",
-        "choices": {
-          "1": {
-            "outcome": "Conducting a public briefing improves understanding but might draw further criticism. This approach enhances transparency but can also lead to increased scrutiny.",
-            "next": "conflict2"
-          },
-          "2": {
-            "outcome": "Implementing changes based on feedback improves relations but risks appearing inconsistent. This approach addresses public concerns but might affect perceived authority.",
-            "next": "conflict3"
-          },
-          "3": {
-            "outcome": "Maintaining your current approach avoids appearing reactive but might lead to continued dissatisfaction. This strategy preserves authority but may not address underlying concerns.",
-            "next": "conflict4"
-          }
+    {
+      "name": "Veteran Officer",
+      "introduction": "As a seasoned officer, you are familiar with controlling large crowds, but the situation today is tense.",
+      "currentSituation": "Protestors are growing restless, and your experience tells you that things could go wrong fast.",
+      "strengths": "Years of experience, leadership skills",
+      "weaknesses": "Physically slower, rigid tactics",
+      "equipment": "Riot shield, radio",
+      "choices": [
+        {
+          "id": 1,
+          "text": "Order your unit to form a defensive line.",
+          "outcome": "The crowd backs off slightly, but the protestors are still agitated.",
+          "mark": 7
+        },
+        {
+          "id": 2,
+          "text": "Attempt to arrest the protest leaders.",
+          "outcome": "You remove key agitators, but this could spark anger among the remaining protestors.",
+          "mark": -8
         }
-      },
-      "2": {
-        "text": "You are tasked with managing a team of less experienced officers during the protests. How do you approach this? Do you: 1) Provide detailed guidance and oversight to ensure effective performance, which may enhance team performance but could be time-consuming, 2) Delegate responsibilities and allow them to operate independently, fostering growth but risking inconsistent performance, 3) Strike a balance by offering support while encouraging autonomy, which might improve performance but require careful management?",
-        "choices": {
-          "1": {
-            "outcome": "Providing detailed guidance enhances team performance but can be time-consuming. This approach ensures thorough oversight but might limit the autonomy of less experienced officers.",
-            "next": "resolution1"
-          },
-          "2": {
-            "outcome": "Delegating responsibilities fosters growth but risks inconsistent performance. This approach encourages independence but might lead to varying levels of effectiveness.",
-            "next": "resolution2"
-          },
-          "3": {
-            "outcome": "Balancing support with autonomy improves performance but requires careful management. This approach supports growth and effectiveness but demands effective oversight.",
-            "next": "resolution3"
-          }
-        }
-      },
-      "3": {
-        "text": "You need to address a growing rift between your team and higher command regarding operational strategies. How do you handle this? Do you: 1) Facilitate open discussions between your team and command to bridge the gap, which might improve understanding but could involve prolonged negotiations, 2) Support higher command's strategies to maintain alignment, potentially causing friction within your team but preserving unity, 3) Advocate for your team's perspective to higher command, which might lead to changes in strategy but risk creating divisions?",
-        "choices": {
-          "1": {
-            "outcome": "Facilitating discussions bridges the gap but involves prolonged negotiations. This approach fosters understanding and collaboration but requires time and effort.",
-            "next": "resolution4"
-          },
-          "2": {
-            "outcome": "Supporting higher command's strategies maintains alignment but might cause friction within your team. This approach preserves unity but can affect morale and cohesion.",
-            "next": "resolution5"
-          },
-          "3": {
-            "outcome": "Advocating for your team's perspective might lead to strategic changes but risks creating divisions. This approach represents team interests but could lead to internal conflicts.",
-            "next": "resolution6"
-          }
-        }
-      },
-      "4": {
-        "text": "You are facing resource shortages that impact your ability to manage the protests effectively. How do you respond? Do you: 1) Prioritize essential resources for critical areas, which ensures focused management but might leave other areas under-resourced, 2) Request additional support from other units, potentially alleviating shortages but stretching available resources thin, 3) Adjust strategies to work within current resource constraints, which could maintain operations but might limit effectiveness?",
-        "choices": {
-          "1": {
-            "outcome": "Prioritizing essential resources ensures focused management but may leave other areas under-resourced. This approach addresses immediate needs but might affect overall operational capacity.",
-            "next": "resolution7"
-          },
-          "2": {
-            "outcome": "Requesting additional support alleviates shortages but might stretch available resources thin. This approach improves overall support but could strain other units or services.",
-            "next": "resolution8"
-          },
-          "3": {
-            "outcome": "Adjusting strategies to work within constraints maintains operations but might limit effectiveness. This approach ensures continuity but may impact the quality of response.",
-            "next": "resolution9"
-          }
-        }
-      }
+      ]
     },
-    "resolution": {
-      "resolution1": "Conducting a public briefing enhances transparency but might increase scrutiny. This approach supports understanding but can also draw additional criticism.",
-      "resolution2": "Implementing changes based on feedback improves relations but risks inconsistency. This approach addresses concerns but might affect perceived authority.",
-      "resolution3": "Maintaining your current approach preserves authority but might lead to continued dissatisfaction. This strategy ensures consistency but may not resolve public concerns.",
-      "resolution4": "Facilitating discussions improves understanding but involves prolonged negotiations. This approach fosters collaboration but requires significant time and effort.",
-      "resolution5": "Supporting higher command's strategies preserves unity but might cause friction within your team. This approach maintains alignment but can affect team morale.",
-      "resolution6": "Advocating for your team's perspective might lead to strategic changes but risks creating divisions. This approach represents team interests but could result in internal conflicts.",
-      "resolution7": "Prioritizing essential resources ensures focused management but may leave other areas under-resourced. This approach addresses immediate needs but might affect overall capacity.",
-      "resolution8": "Requesting additional support alleviates shortages but could stretch resources thin. This approach improves support but might strain other units or services.",
-      "resolution9": "Adjusting strategies to work within constraints maintains operations but might limit effectiveness. This approach ensures continuity but may impact response quality."
-    }
-  },
-  "Protestor": {
-    "introduction": "As a protestor, you are actively involved in advocating for change and challenging the status quo. Your role involves navigating the complexities of activism while dealing with law enforcement and other challenges.",
-    "conflict": {
-      "1": {
-        "text": "You face tension between different factions within the protest movement. How do you address this? Do you: 1) Organize meetings to unify the factions and develop a cohesive strategy, which might improve coordination but could face resistance, 2) Focus on your specific faction's goals and strategies, potentially leading to fragmented efforts but maintaining clarity, 3) Attempt to mediate between factions to find common ground, which could foster unity but might require compromising on key issues?",
-        "choices": {
-          "1": {
-            "outcome": "Organizing meetings to unify factions improves coordination but might face resistance. This approach promotes a unified strategy but can be challenging to implement.",
-            "next": "conflict2"
-          },
-          "2": {
-            "outcome": "Focusing on your faction's goals maintains clarity but risks fragmented efforts. This approach ensures specific objectives are met but might hinder overall movement effectiveness.",
-            "next": "conflict3"
-          },
-          "3": {
-            "outcome": "Mediating between factions fosters unity but requires compromises. This approach promotes collaboration but might involve negotiating on contentious issues.",
-            "next": "conflict4"
-          }
+    {
+      "name": "Protestor",
+      "introduction": "You are part of a group protesting for change, determined to make your voice heard.",
+      "currentSituation": "The police are forming up, and tensions are at a breaking point.",
+      "strengths": "Passion, strong beliefs",
+      "weaknesses": "Limited protection, vulnerability to law enforcement",
+      "equipment": "Placards, banners",
+      "choices": [
+        {
+          "id": 1,
+          "text": "Lead a chant to keep the protestors united and peaceful.",
+          "outcome": "The crowd follows your lead, but the police are getting restless.",
+          "mark": 6
+        },
+        {
+          "id": 2,
+          "text": "Encourage protestors to confront the police peacefully.",
+          "outcome": "Tensions rise as protestors approach the police lines, risking escalation.",
+          "mark": -7
         }
-      },
-      "2": {
-        "text": "You encounter increasing police presence and crackdowns during the protests. How do you respond? Do you: 1) Adapt your tactics to avoid direct confrontation, which might reduce immediate risk but limit impact, 2) Engage with police to negotiate terms of engagement, potentially easing tensions but risking confrontations, 3) Continue with your planned actions, demonstrating resolve but potentially escalating the situation?",
-        "choices": {
-          "1": {
-            "outcome": "Adapting tactics to avoid confrontation reduces immediate risk but might limit impact. This approach ensures safety but might affect the visibility of your cause.",
-            "next": "resolution1"
-          },
-          "2": {
-            "outcome": "Engaging with police to negotiate terms can ease tensions but might lead to confrontations. This approach aims to balance interactions but could result in conflicts.",
-            "next": "resolution2"
-          },
-          "3": {
-            "outcome": "Continuing with planned actions demonstrates resolve but may escalate the situation. This approach maintains momentum but could lead to increased risks and confrontations.",
-            "next": "resolution3"
-          }
-        }
-      },
-      "3": {
-        "text": "You need to make a critical decision about your participation in a high-risk protest event. How do you proceed? Do you: 1) Participate in the event to show solidarity, which could bolster the movement but involves significant personal risk, 2) Avoid participation to ensure personal safety, which might protect you but could be seen as a lack of commitment, 3) Encourage others to participate while opting out yourself, which maintains support for the cause but might affect your credibility?",
-        "choices": {
-          "1": {
-            "outcome": "Participating in the event shows solidarity but involves significant risk. This approach demonstrates commitment but could have personal consequences.",
-            "next": "resolution4"
-          },
-          "2": {
-            "outcome": "Avoiding participation ensures safety but might be seen as a lack of commitment. This approach protects you but could impact your standing within the movement.",
-            "next": "resolution5"
-          },
-          "3": {
-            "outcome": "Encouraging others to participate while opting out maintains support for the cause but might affect your credibility. This approach demonstrates leadership but could lead to perceptions of hypocrisy.",
-            "next": "resolution6"
-          }
-        }
-      },
-      "4": {
-        "text": "You discover critical information about the movement’s opponents. How do you handle this? Do you: 1) Share the information with fellow protestors to aid in strategic planning, which could enhance your efforts but might compromise confidentiality, 2) Use the information for personal leverage in negotiations, potentially gaining advantages but risking trust within the movement, 3) Keep the information confidential to protect sources and maintain trust, even if it limits immediate advantages?",
-        "choices": {
-          "1": {
-            "outcome": "Sharing information aids strategic planning but might compromise confidentiality. This approach enhances collective efforts but could affect trust and security.",
-            "next": "resolution7"
-          },
-          "2": {
-            "outcome": "Using information for personal leverage could gain advantages but risks trust. This approach might provide immediate benefits but could undermine relationships within the movement.",
-            "next": "resolution8"
-          },
-          "3": {
-            "outcome": "Keeping information confidential protects sources and maintains trust but might limit immediate advantages. This approach upholds integrity but might miss opportunities for strategic gains.",
-            "next": "resolution9"
-          }
-        }
-      }
+      ]
     },
-    "resolution": {
-      "resolution1": "Organizing meetings to unify factions improves coordination but faces resistance. This approach fosters a unified strategy but can be challenging to implement.",
-      "resolution2": "Focusing on your faction's goals maintains clarity but risks fragmented efforts. This approach ensures specific objectives are met but might hinder overall movement effectiveness.",
-      "resolution3": "Mediating between factions fosters unity but requires compromises. This approach promotes collaboration but involves negotiating on contentious issues.",
-      "resolution4": "Participating in high-risk events shows solidarity but involves significant risk. This approach demonstrates commitment but could have personal consequences.",
-      "resolution5": "Avoiding participation ensures safety but might be seen as a lack of commitment. This approach protects you but could impact your standing within the movement.",
-      "resolution6": "Encouraging others to participate while opting out maintains support for the cause but might affect your credibility. This approach demonstrates leadership but could lead to perceptions of hypocrisy.",
-      "resolution7": "Sharing information aids strategic planning but might compromise confidentiality. This approach enhances collective efforts but could affect trust and security.",
-      "resolution8": "Using information for personal leverage could gain advantages but risks trust. This approach might provide immediate benefits but could undermine relationships within the movement.",
-      "resolution9": "Keeping information confidential protects sources and maintains trust but might limit immediate advantages. This approach upholds integrity but might miss opportunities for strategic gains."
+    {
+      "name": "Politician",
+      "introduction": "As a politician, you must balance the demands of the protestors with the need to maintain order.",
+      "currentSituation": "You’ve arrived at the protest site, and both sides are looking to you for guidance.",
+      "strengths": "Influence, negotiation skills",
+      "weaknesses": "Public scrutiny, divided loyalties",
+      "equipment": "Speeches, bodyguards",
+      "choices": [
+        {
+          "id": 1,
+          "text": "Address the crowd to try and calm the situation.",
+          "outcome": "Your speech resonates with some, but others remain unsatisfied.",
+          "mark": 8
+        },
+        {
+          "id": 2,
+          "text": "Privately meet with the protest leaders to discuss their demands.",
+          "outcome": "You gain valuable insight but risk appearing indecisive to the public.",
+          "mark": -6
+        }
+      ]
     }
-  },
-  "Politician": {
-    "introduction": "As a politician, you navigate the complex landscape of public opinion and political pressure during the protests. Your role involves balancing political interests with public sentiment and making strategic decisions that impact both your career and the broader movement.",
-    "conflict": {
-      "1": {
-        "text": "You receive conflicting advice from political advisors about how to address the protests. How do you proceed? Do you: 1) Follow the advice of the majority of advisors, which might ensure political alignment but could disregard alternative perspectives, 2) Choose a course of action based on your personal judgment, potentially risking political fallout but demonstrating leadership, 3) Seek input from a broader range of stakeholders, including community leaders, to make an informed decision, which could involve more negotiation but ensure a more balanced approach?",
-        "choices": {
-          "1": {
-            "outcome": "Following the majority of advisors ensures political alignment but might disregard alternative perspectives. This approach supports party unity but could miss valuable insights.",
-            "next": "conflict2"
-          },
-          "2": {
-            "outcome": "Choosing a course of action based on personal judgment risks political fallout but demonstrates leadership. This approach shows decisiveness but might lead to controversy.",
-            "next": "conflict3"
-          },
-          "3": {
-            "outcome": "Seeking input from a broader range of stakeholders ensures a balanced approach but involves more negotiation. This strategy promotes inclusivity but could slow decision-making.",
-            "next": "conflict4"
-          }
-        }
-      },
-      "2": {
-        "text": "You are faced with a decision to either support or oppose new legislation related to the protests. How do you approach this? Do you: 1) Support the legislation to align with public sentiment, which could enhance your popularity but might conflict with party interests, 2) Oppose the legislation to maintain party alignment, potentially risking public backlash but preserving party unity, 3) Advocate for amendments to the legislation, which could address key issues but might involve complex negotiations?",
-        "choices": {
-          "1": {
-            "outcome": "Supporting the legislation aligns with public sentiment but might conflict with party interests. This approach boosts popularity but could create internal party tensions.",
-            "next": "resolution1"
-          },
-          "2": {
-            "outcome": "Opposing the legislation maintains party alignment but risks public backlash. This approach preserves party unity but might impact your public standing.",
-            "next": "resolution2"
-          },
-          "3": {
-            "outcome": "Advocating for amendments addresses key issues but involves complex negotiations. This approach aims to balance interests but requires significant effort and negotiation.",
-            "next": "resolution3"
-          }
-        }
-      },
-      "3": {
-        "text": "You are invited to a high-profile event where your stance on the protests will be scrutinized. How do you handle this? Do you: 1) Deliver a speech supporting the protesters' demands, which might garner public support but could alienate certain political allies, 2) Focus on a neutral stance to avoid controversy, which could maintain political relationships but might be seen as evasive, 3) Present a balanced view that acknowledges both sides, which could demonstrate diplomacy but might be perceived as lacking conviction?",
-        "choices": {
-          "1": {
-            "outcome": "Delivering a speech supporting the protesters' demands garners public support but might alienate some political allies. This approach shows alignment with the movement but risks internal conflicts.",
-            "next": "resolution4"
-          },
-          "2": {
-            "outcome": "Focusing on a neutral stance maintains relationships but might be seen as evasive. This approach avoids controversy but could be perceived as lacking leadership.",
-            "next": "resolution5"
-          },
-          "3": {
-            "outcome": "Presenting a balanced view demonstrates diplomacy but might be seen as lacking conviction. This approach shows an attempt at balance but could be perceived as indecisive.",
-            "next": "resolution6"
-          }
-        }
-      },
-      "4": {
-        "text": "You are faced with a budgetary decision related to funding for protest-related initiatives. How do you handle this? Do you: 1) Allocate funds to initiatives that address immediate needs, which could provide short-term relief but might not address long-term goals, 2) Invest in long-term projects that address root causes, potentially benefiting the community in the long run but requiring a longer timeline, 3) Balance funding between immediate needs and long-term projects, which might address both but could stretch resources thin?",
-        "choices": {
-          "1": {
-            "outcome": "Allocating funds to immediate needs provides short-term relief but might not address long-term goals. This approach delivers quick support but may overlook deeper issues.",
-            "next": "resolution7"
-          },
-          "2": {
-            "outcome": "Investing in long-term projects benefits the community in the long run but requires a longer timeline. This approach addresses root causes but may delay immediate relief.",
-            "next": "resolution8"
-          },
-          "3": {
-            "outcome": "Balancing funding between immediate needs and long-term projects addresses both but might stretch resources thin. This approach aims for a comprehensive solution but could limit overall impact.",
-            "next": "resolution9"
-          }
-        }
-      }
-    },
-    "resolution": {
-      "resolution1": "Following the majority of advisors ensures political alignment but might disregard alternative perspectives. This approach supports party unity but might miss valuable insights.",
-      "resolution2": "Choosing a course of action based on personal judgment risks political fallout but demonstrates leadership. This approach shows decisiveness but could lead to controversy.",
-      "resolution3": "Seeking input from a broader range of stakeholders ensures a balanced approach but involves more negotiation. This strategy promotes inclusivity but might slow decision-making.",
-      "resolution4": "Delivering a speech supporting protesters' demands garners public support but might alienate some political allies. This approach shows alignment with the movement but risks internal conflicts.",
-      "resolution5": "Focusing on a neutral stance maintains relationships but might be seen as evasive. This approach avoids controversy but could be perceived as lacking leadership.",
-      "resolution6": "Presenting a balanced view demonstrates diplomacy but might be seen as lacking conviction. This approach shows an attempt at balance but could be perceived as indecisive.",
-      "resolution7": "Allocating funds to immediate needs provides short-term relief but might not address long-term goals. This approach delivers quick support but may overlook deeper issues.",
-      "resolution8": "Investing in long-term projects benefits the community in the long run but requires a longer timeline. This approach addresses root causes but may delay immediate relief.",
-      "resolution9": "Balancing funding between immediate needs and long-term projects addresses both but might stretch resources thin. This approach aims for a comprehensive solution but could limit overall impact."
-    }
-  }
+  ]
 }
